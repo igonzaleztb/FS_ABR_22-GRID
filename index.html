@@ -1,29 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 </head>
 <link rel="stylesheet" href="styles.css">
 <script src="script.js"></script>
+
 <body>
-    <div class="red">
 
-        <div   id="grid-container"  >
-            <div class="item1">ITEM 1</div>
-            <div class="item2">ITEM 2</div>
-            <div class="item3">ITEM 3</div>
-            <div class="item4">ITEM 4</div>
-            <div class="item5">ITEM 5</div>
-        </div>
-        <button onclick="applyStyles('grid-template-columns-20');">grid-template-columns ( 20% 20% 20% 20% 20%)</button>
-        <button onclick="applyStyles('grid-template-columns-10');">grid-template-columns ( 10% 10% 10% 10% 60%)</button>
-        <button onclick="applyStyles('grid-template-areas');">grid-template-areas</button>
-        
-    
+    <section id="padre">
 
 
-    </div>
-    
- </body>
+        <section class="buttons-section">
+
+            <h1>GRID-TEMPLATE-COLUMNS</h1>
+            <button onclick="applyStyles('grid-template-columns-20');">grid-template-columns (20% 20% 20% 20%
+                20%)</button> <BR></BR>
+            <button onclick="applyStyles('grid-template-columns-10');">grid-template-columns (10% 10% 10% 10% 60%)
+            </button>
+            <h1>GRID-COLUMNS</h1>
+
+            <button onclick="applyStyles('grid-column-start');">grid-column-start</button>
+            <h1>GRID-TEMPLATE-AREAS</h1>
+
+
+            <button onclick="applyStyles('grid-template-areas');">grid-template-areas</button>
+
+            <h1>GRID-AREA</h1>
+
+
+            <button onclick="applyStyles('grid-areas');">grid-areas</button>
+
+           
+            <h1>GRID-AUTO</h1>
+            <button onclick="applyStyles('grid-auto-rows');">grid-auto-rows</button>
+            <label id="result"></label>
+            <input type="range" id="range" min="0" max="100">
+
+            <h1>GAP</h1>
+            <button onclick="applyStyles('gap');">gap </button>
+            <button onclick="applyStyles('row-gap');"> row-gap </button>
+            <button onclick="applyStyles('column-gap');"> column-gap </button>
+ 
+        </section>
+
+ 
+        <section class="live-section">
+            <div class="red">
+
+                <div id="grid-container">
+                    <div class="item1">ITEM 1</div>
+                    <div class="item2">ITEM 2</div>
+                    <div class="item3">ITEM 3</div>
+                    <div class="item4">ITEM 4</div>
+                    <div class="item5">ITEM 5</div>
+                </div>
+ 
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+
+
+</body>
 
 </html>

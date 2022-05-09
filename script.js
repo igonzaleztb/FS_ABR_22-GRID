@@ -1,37 +1,70 @@
 function applyStyles(style) {
-  let stylesPadre =  document.getElementById("grid-container").style;
+  let stylesPadre = document.getElementById("grid-container").style;
 
   if (style == "grid-template-columns-20") {
-
-    stylesPadre.gridTemplateColumns = "20% 20% 20% 20% 20%";
-    
-
  
-
-  }else if (style == "grid-template-areas") {
-  
- 
-    document.querySelector(".item1").style.gridArea = "menu1"
-    document.querySelector(".item2").style.gridArea = "menu2"
-    document.querySelector(".item3").style.gridArea = "menu3"
-    document.querySelector(".item4").style.gridArea = "menu4"
-    document.querySelector(".item5").style.gridArea = "menu5"
+    stylesPadre.gridTemplateColumns = `20% 20% 20% 20% 20%`;
 
 
- stylesPadre.gridTemplateAreas = `
- "menu3 menu3 menu3 menu4 menu4 menu4"
+  } else if (style == "grid-template-areas") {
+    document.querySelector(".item1").style.gridArea = "menu1";
+    document.querySelector(".item2").style.gridArea = "menu2";
+    document.querySelector(".item3").style.gridArea = "menu3";
+    document.querySelector(".item4").style.gridArea = "menu4";
+    document.querySelector(".item5").style.gridArea = "menu5";
+
+    stylesPadre.gridTemplateAreas = `
+ "menu3 menu3 menu4 menu4 menu4 menu4"
  "menu1 menu1 menu1 menu1 menu2 menu2"
 
  "menu5 menu5 menu5 menu5 menu5 menu5"
  
  
- `
- 
-  }else if(style == "grid-template-columns-10"){
+ `;
+  } else if (style == "grid-template-columns-10") {
     stylesPadre.gridTemplateColumns = "10% 10% 10% 10% 60%";
+  }else if(style =="gap"){
+
+    stylesPadre.gap = "5%";
 
   }
-  
+  else if(style =="grid-column-start"){
+
+ 
+    stylesPadre.gridAutoColumns = " 1";
+    
+
+  }
+  else if(style =="row-gap"){
+
+    stylesPadre.rowGap = "5px";
+    
+
+  }
+  else if(style =="column-gap"){
+
+    stylesPadre.columnGap = "5px";
+    
+
+  }
+  else if(style =="grid-auto-rows"){
+
+   
+    let valueRange = document.getElementById("range").value
+    document.getElementById("result").innerHTML=`${valueRange}px`
+
+
+    
+    stylesPadre.gridAutoRows = `${valueRange}px`;
+    
+
+  }else if (style =="grid-areas"){
+
+ 
+   
+    stylesPadre.gridColumn  =4;
+  }
+
   /*  else if (style == "justify-content-flex-start") {
     stylesPadre.justifyContent = "flex-start";
     document.getElementById("result").innerHTML= "flex-start"
@@ -53,7 +86,7 @@ function applyStyles(style) {
 
   } */
   ///FLEX DIRECTION
-/*   else if (style == "flex-direction-row") {
+  /*   else if (style == "flex-direction-row") {
     stylesPadre.flexDirection = "row";
     document.getElementById("result").innerHTML= "row"
 
@@ -94,46 +127,24 @@ function applyStyles(style) {
   } */
 }
 
-
- 
-
-function show(divs){
-
-    if(divs =="justify-content"){
-
-        document.getElementById("div-jcontent").style.display="block"
-    }
-    else  if(divs =="flex-direction"){
-
-        document.getElementById("div-fdirection").style.display="block"
-    }
-    else  if(divs =="align-items"){
-
-        document.getElementById("div-aitems").style.display="block"
-    }
-
-
+function show(divs) {
+  if (divs == "justify-content") {
+    document.getElementById("div-jcontent").style.display = "block";
+  } else if (divs == "flex-direction") {
+    document.getElementById("div-fdirection").style.display = "block";
+  } else if (divs == "align-items") {
+    document.getElementById("div-aitems").style.display = "block";
+  }
 }
 
-
- 
-
-function cerrar (divs){
-
-
-    if(divs =="justify-content"){
-
-        document.getElementById("div-jcontent").style.display="none"
-    }
-    else  if(divs =="flex-direction"){
-
-        document.getElementById("div-fdirection").style.display="none"
-    }
-    else  if(divs =="align-items"){
-
-        document.getElementById("div-aitems").style.display="none"
-    }
-   
+function cerrar(divs) {
+  if (divs == "justify-content") {
+    document.getElementById("div-jcontent").style.display = "none";
+  } else if (divs == "flex-direction") {
+    document.getElementById("div-fdirection").style.display = "none";
+  } else if (divs == "align-items") {
+    document.getElementById("div-aitems").style.display = "none";
+  }
 }
 
 /* 

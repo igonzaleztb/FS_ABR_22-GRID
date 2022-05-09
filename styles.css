@@ -1,78 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@300&family=Raleway:wght@300&family=Roboto:wght@300&display=swap');
-body{
-   font-family: 'Montserrat', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Roboto', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@300&family=Raleway:wght@300&family=Roboto:wght@300&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #eeeeee;
 }
-.item1{
 
-   background-color: red;
- }
- .item2{
+.item1 {
+  background-color: red;
+}
+.item2 {
+  background-color: rgb(255, 154, 30);
+}
+.item3 {
+  background-color: rgb(218, 255, 30);
+}
+.item4 {
+  background-color: rgb(56, 255, 30);
+}
+.item5 {
+  background-color: rgb(30, 248, 255);
+}
 
-   background-color: rgb(255, 154, 30);
- }
- .item3{
-
-   background-color: rgb(218, 255, 30);
- }
- .item4{
-
-   background-color: rgb(56, 255, 30);
- }
- .item5{
-
-   background-color: rgb(30, 248, 255);
- }
- 
 #grid-container {
-    width: 60%;
-    margin-left: 20%;
-    display: grid;
-  
- /*  grid-template-areas:
-    'header main menu right footer '
-     ; */
-  
-  
-  background-color: #0051ff;
-  padding: 10px;
+  display: grid;
+
+  padding: 5px;
 }
 
 #grid-container > div {
-   text-align: center;
-  border: solid 4px  #0051ff;
+  text-align: center;
   color: rgb(0, 0, 0);
-  padding: 20px 0;
-  font-size: 30px;
+  padding: 5px 0;
+  font-size: 20px;
+  border-radius: 12px;
 }
-
-
 
 button {
-	box-shadow:inset 0px 1px 0px 0px #a4e271;
-	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-	background-color:#89c403;
-	border-radius:16px;
-	border:1px solid #74b807;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:13px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528009;
+  background: linear-gradient(to bottom, #689500 5%);
+  background-color: #89c403;
+  border-radius: 16px;
+  border: 1px solid #74b807;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 13px 24px;
+  text-decoration: none;
 }
 button:hover {
-	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-	background-color:#77a809;
+  background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  background-color: #77a809;
 }
 button:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
-        
+#padre {
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.buttons-section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.live-section {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-right: 5%;
+}
+
+label{
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+}
+input[type="range"]{
+
+  width: 50%;
+}
