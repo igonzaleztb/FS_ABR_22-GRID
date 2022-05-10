@@ -52,8 +52,9 @@ button {
   text-decoration: none;
 }
 button:hover {
-  background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
-  background-color: #77a809;
+ 
+  background-color: #000000;
+  border: solid 1px rgb(0, 0, 0);
 }
 button:active {
   position: relative;
@@ -64,12 +65,16 @@ button:active {
   margin-top: 2%;
   display: grid;
   grid-template-columns: 50% 50%;
+  text-align: center;
 }
 .buttons-section {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin-left: 25%;
+  padding-right: 5%;
+  overflow-y: scroll;
+   height:80vh;
 }
 
 .live-section {
@@ -84,8 +89,22 @@ label{
   text-align: center;
   font-weight: 500;
   font-size: 2rem;
+  margin: 2%;
 }
 input[type="range"]{
 
-  width: 50%;
+  width: 100%;
 }
+#reset{
+  width: 20%;
+  margin-left: 40%;
+  background-color: red;
+  border: solid 1px red;
+}
+#reset:hover{
+
+  background-color: #000000;
+  border: solid 1px rgb(0, 0, 0);
+}
+ 
+ 

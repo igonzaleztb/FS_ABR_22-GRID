@@ -9,39 +9,63 @@
 
 <body>
 
+    <button onclick="location.reload();" id="reset">RESET</button>
     <section id="padre">
 
 
         <section class="buttons-section">
 
             <h1>GRID-TEMPLATE-COLUMNS</h1>
-            <button onclick="applyStyles('grid-template-columns-20');">grid-template-columns (20% 20% 20% 20%
-                20%)</button> <BR></BR>
-            <button onclick="applyStyles('grid-template-columns-10');">grid-template-columns (10% 10% 10% 10% 60%)
+            <button onclick="applyStyles('grid-template-columns-20');">repeat(5, 20%)  </button> <BR></BR>
+            <button onclick="applyStyles('grid-template-columns-fr');">1fr 1fr 2fr 2fr 1fr  </button> <BR></BR>
+            <button onclick="applyStyles('grid-template-columns-fr-repeat');">repeat(5, 2fr)  </button> <BR></BR>
+            <button onclick="applyStyles('grid-template-columns-10');">(10% 10% 10% 10% 60%)</button> <BR></BR>
+            <button onclick="applyStyles('grid-template-columns-fit-content');"> fit-content  
             </button>
+
+             <p>--------------------------------------------------------------------------</p>
+            
+            <h1>GRID-TEMPLATE-ROWS</h1>
+            <button onclick="applyStyles('grid-template-rows-1fr-2fr-1fr-2fr-1fr');">1fr 2fr 1fr 2fr 1fr  </button> <BR></BR>
+            <button onclick="applyStyles('grid-template-rows-px');">40px 40px 40px 40px 40px  </button> <BR></BR>
+            <button onclick="applyStyles('grid-template-rows-auto');">auto </button> <BR></BR>
+            <button onclick="applyStyles('grid-template-rows-repeat-5-40');">repeat(5,40%)  </button> <BR></BR>
+
+            <p>--------------------------------------------------------------------------</p>
+
+
             <h1>GRID-COLUMNS</h1>
 
-            <button onclick="applyStyles('grid-column-start');">grid-column-start</button>
+            <button onclick="applyStyles('grid-column-start');"> auto</button>
+            <p>--------------------------------------------------------------------------</p>
+
             <h1>GRID-TEMPLATE-AREAS</h1>
 
 
             <button onclick="applyStyles('grid-template-areas');">grid-template-areas</button>
+
+            <p>--------------------------------------------------------------------------</p>
 
             <h1>GRID-AREA</h1>
 
 
             <button onclick="applyStyles('grid-areas');">grid-areas</button>
 
-           
+            <p>--------------------------------------------------------------------------</p>
+
             <h1>GRID-AUTO</h1>
             <button onclick="applyStyles('grid-auto-rows');">grid-auto-rows</button>
             <label id="result"></label>
             <input type="range" id="range" min="0" max="100">
 
+            <p>--------------------------------------------------------------------------</p>
+
             <h1>GAP</h1>
-            <button onclick="applyStyles('gap');">gap </button>
-            <button onclick="applyStyles('row-gap');"> row-gap </button>
-            <button onclick="applyStyles('column-gap');"> column-gap </button>
+            <button onclick="applyStyles('gap');">gap 5px </button>
+            <button onclick="applyStyles('row-gap');"> row-gap 20px </button>
+            <button onclick="applyStyles('column-gap');"> column-gap 10px </button>
+            <button onclick="applyStyles('column-gap-20');"> column-gap 20px </button>
+
  
         </section>
 
@@ -50,13 +74,14 @@
             <div class="red">
 
                 <div id="grid-container">
-                    <div class="item1">ITEM 1</div>
-                    <div class="item2">ITEM 2</div>
-                    <div class="item3">ITEM 3</div>
-                    <div class="item4">ITEM 4</div>
-                    <div class="item5">ITEM 5</div>
+                    <div class="item1" id="item1">ITEM 1</div>
+                    <div class="item2" id="item2">ITEM 2</div>
+                    <div class="item3" id="item3">ITEM 3</div>
+                    <div class="item4" id="item4">ITEM 4</div>
+                    <div class="item5" id="item5">ITEM 5</div>
                 </div>
- 
+
+                <div id="show-code"></div>
             </div>
 
         </section>

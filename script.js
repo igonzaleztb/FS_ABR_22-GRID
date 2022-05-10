@@ -1,12 +1,67 @@
 function applyStyles(style) {
   let stylesPadre = document.getElementById("grid-container").style;
+  let stylesHijo1 = document.getElementById("item1");
+  let stylesHijo2 = document.getElementById("item2");
+  let stylesHijo3 = document.getElementById("item3");
+  let stylesHijo4 = document.getElementById("item4");
+  let stylesHijo5 = document.getElementById("item5");
+  let showCode = document.getElementById("show-code")
+  let hiddenCode = showCode.innerHTML=""
+ 
+
 
   if (style == "grid-template-columns-20") {
+    hiddenCode
+    stylesPadre.gridTemplateColumns = `repeat(5, 20%)`;
+   
+
+
+  } else if (style == "grid-template-columns-fr") {
+    hiddenCode
+    stylesPadre.gridTemplateColumns = `1fr 1fr 2fr 2fr 1fr`;
+   
+
+  }
+  else if (style == "grid-template-columns-fr-repeat") {
+    hiddenCode
+    stylesPadre.gridTemplateColumns = `repeat(5, 2fr)`;
  
-    stylesPadre.gridTemplateColumns = `20% 20% 20% 20% 20%`;
+
+  }
+
+  //GRID-TEMPLATE-ROWS
+  else if (style == "grid-template-rows-1fr-2fr-1fr-2fr-1fr") {
+    hiddenCode
+    stylesPadre.gridTemplateRows = `1fr 2fr 1fr 2fr 1fr`;
 
 
-  } else if (style == "grid-template-areas") {
+  }
+  else if (style == "grid-template-rows-auto") {
+    hiddenCode
+    stylesPadre.gridTemplateRows = `auto`;
+  
+
+  }
+  else if (style == "grid-template-rows-px") {
+    hiddenCode
+    stylesPadre.gridTemplateRows = `40px 40px 40px 40px 40px`;
+   
+
+  }
+  else if (style == "grid-template-rows-repeat-5-40") {
+    hiddenCode
+    stylesPadre.gridTemplateRows = `repeat(5,40%)`;
+  
+
+  }
+
+  else if (style == "grid-template-columns-fit-content") {
+    hiddenCode
+    stylesPadre.gridTemplateColumns = `fit-content(40%)`;
+ 
+
+  }  else if (style == "grid-template-areas") {
+    hiddenCode
     document.querySelector(".item1").style.gridArea = "menu1";
     document.querySelector(".item2").style.gridArea = "menu2";
     document.querySelector(".item3").style.gridArea = "menu3";
@@ -22,34 +77,114 @@ function applyStyles(style) {
  
  `;
   } else if (style == "grid-template-columns-10") {
+    hiddenCode
     stylesPadre.gridTemplateColumns = "10% 10% 10% 10% 60%";
   }else if(style =="gap"){
+    hiddenCode
 
     stylesPadre.gap = "5%";
 
   }
   else if(style =="grid-column-start"){
-
+  
  
-    stylesPadre.gridAutoColumns = " 1";
+    stylesPadre.gridTemplateColumns = " auto auto auto auto auto";
+
+    stylesHijo1.style.gridColumn ="1/-1"
+
+    stylesHijo2.style.gridColumn ="1/span 2"
+
+    stylesHijo3.style.gridRow ="2/ span 2"
+    stylesHijo3.style.gridColumn ="3/span 3"
+
+    stylesHijo4.style.gridColumn ="1/-1"
+
+    stylesHijo5.style.gridColumn ="1/-1"
     
+
+
+    
+let elementStyle1 = window.getComputedStyle(stylesHijo1);
+let elementStyle2 = window.getComputedStyle(stylesHijo2);
+let elementStyle3 = window.getComputedStyle(stylesHijo3);
+let elementStyle4 = window.getComputedStyle(stylesHijo4);
+let elementStyle5 = window.getComputedStyle(stylesHijo5);
+
+let gridCol1 = elementStyle1.getPropertyValue('grid-column');
+let gridCol2 = elementStyle2.getPropertyValue('grid-column');
+let gridCol3 = elementStyle3.getPropertyValue('grid-column');
+let gridRow = elementStyle3.getPropertyValue('grid-row');
+let gridCol4 = elementStyle4.getPropertyValue('grid-column');
+let gridCol5 = elementStyle5.getPropertyValue('grid-column');
+ 
+ 
+showCode.innerHTML = `
+    
+    .item-1{
+
+      grid-column: ${gridCol1}
+    }
+    </br>
+    </br>
+    .item-2{
+
+      grid-column: ${gridCol2}
+    }
+    </br>
+    </br>
+    .item-3{
+
+      grid-column: ${gridCol3};
+    
+    
+      grid-row: ${gridRow}
+    }
+    </br>
+    </br>
+    .item-4{
+
+      grid-column: ${gridCol4}
+    }
+    </br>
+    </br>
+    .item-5{
+
+      grid-column: ${gridCol5}
+    }
+    
+    `
+
 
   }
   else if(style =="row-gap"){
-
-    stylesPadre.rowGap = "5px";
-    
+    hiddenCode
+    stylesPadre.rowGap = "20px";
+ 
+  
 
   }
   else if(style =="column-gap"){
+    hiddenCode
 
-    stylesPadre.columnGap = "5px";
+    stylesPadre.columnGap = "10px";
+    stylesPadre.gridTemplateColumns = `repeat(5, 20%)`;
+
+    
+
+  }
+  else if(style =="column-gap-20"){
+    hiddenCode
+
+    stylesPadre.columnGap = "50px";
+    stylesPadre.gridTemplateColumns = `repeat(5, 20%)`;
+
     
 
   }
   else if(style =="grid-auto-rows"){
+    hiddenCode
 
-   
+
     let valueRange = document.getElementById("range").value
     document.getElementById("result").innerHTML=`${valueRange}px`
 
@@ -59,72 +194,14 @@ function applyStyles(style) {
     
 
   }else if (style =="grid-areas"){
-
+    hiddenCode
  
    
-    stylesPadre.gridColumn  =4;
+    stylesPadre.gridColumn  ="2/3";
+    stylesPadre.gridRow  ="2/3";
   }
 
-  /*  else if (style == "justify-content-flex-start") {
-    stylesPadre.justifyContent = "flex-start";
-    document.getElementById("result").innerHTML= "flex-start"
-
-  } else if (style == "justify-content-flex-end") {
-    stylesPadre.justifyContent = "flex-end";
-    document.getElementById("result").innerHTML= "flex-end"
-
-  } else if (style == "justify-content-space-evenly") {
-    stylesPadre.justifyContent = "space-evenly";
-    document.getElementById("result").innerHTML= "space-evenly"
-  } else if (style == "justify-content-space-between") {
-    stylesPadre.justifyContent = "space-between";
-    document.getElementById("result").innerHTML= "space-between"
-
-  } else if (style == "justify-content-space-around") {
-    stylesPadre.justifyContent = "space-around";
-    document.getElementById("result").innerHTML= "space-around"
-
-  } */
-  ///FLEX DIRECTION
-  /*   else if (style == "flex-direction-row") {
-    stylesPadre.flexDirection = "row";
-    document.getElementById("result").innerHTML= "row"
-
-  } else if (style == "flex-direction-row-reverse") {
-    stylesPadre.flexDirection = "row-reverse";
-    document.getElementById("result").innerHTML= "row-reverse"
-
-  } else if (style == "flex-direction-column") {
-    stylesPadre.flexDirection = "column";
-    document.getElementById("result").innerHTML= "column"
-
-  } else if (style == "flex-direction-column-reverse") {
-    stylesPadre.flexDirection = "column-reverse";
-    document.getElementById("result").innerHTML= "column-reverse"
-
-  } */
-  ///ALIGN ITEMS
-  /* else if (style == "align-items-center") {
-    stylesPadre.alignItems = "center";
-    document.getElementById("result").innerHTML= "center"
-
-  } else if (style == "align-items-flex-start") {
-    stylesPadre.alignItems = "flex-start";
-    document.getElementById("result").innerHTML= "flex-start"
-
-  } else if (style == "align-items-flex-end") {
-    stylesPadre.alignItems = "flex-end";
-    document.getElementById("result").innerHTML= "flex-end"
-
-  } else if (style == "align-items-stretch") {
-    stylesPadre.alignItems = "stretch";
-    document.getElementById("result").innerHTML= "stretch"
-
-  } else if (style == "align-items-baseline") {
-    stylesPadre.alignItems = "baseline";
-    document.getElementById("result").innerHTML= "baseline"
-
-  } */
+  
 }
 
 function show(divs) {
